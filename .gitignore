@@ -1,0 +1,13 @@
+# Sistema operativo
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Otros sistemas de IA (no pertenecen a este repo)
+.antigravity/
+.minimax/
+
+# Directorios legacy / duplicados
+agents/
+claude/
