@@ -8,6 +8,6 @@ Thumbs.db
 .antigravity/
 .minimax/
 
-# Directorios legacy / duplicados
-agents/
-claude/
+# Directorios legacy / duplicados (solo en la raíz)
+/agents/
+/claude/

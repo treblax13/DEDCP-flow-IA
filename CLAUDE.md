@@ -121,29 +121,87 @@ Traducción del diseño curricular y evaluativo a Moodle.
 
 ## 6. Flujo canónico de trabajo
 
-Cuando la tarea siga el pipeline completo del DEDCP, el orden por defecto debe ser este:
+### 6.1 Pipeline troncal — diseño de asignatura
+
+Este es el flujo oficial por defecto para diseñar una asignatura nueva:
 
 1. `digital-education-research-analyst`
 2. `doctoral-competency-designer`
-3. `doctoral-curriculum-architect`
-4. `curriculum-modular-architect`
-5. `eval-framework-designer` ← **la evaluación se diseña ANTES que las sesiones (Backward Design innegociable)**
-6. `curriculum-session-designer` ← recibe el marco evaluativo ya definido y se alinea a él
-7. `moodle-doctoral-creator`
-8. `doctoral-content-synthesizer` ← puede invocarse también en paralelo con pasos 5–7
+3. `curriculum-modular-architect`
+4. `eval-framework-designer` ← **la evaluación se diseña ANTES que las sesiones (Backward Design innegociable)**
+5. `curriculum-session-designer` ← recibe el marco evaluativo ya definido y se alinea a él
+6. `moodle-doctoral-creator`
 
-### Por qué la evaluación va antes de las sesiones
+### 6.2 Agentes no troncales
+
+Estos agentes no forman parte del pipeline troncal de diseño de una asignatura. Operan en modos específicos y condicionales:
+
+**`doctoral-curriculum-architect`** — agente de auditoría transversal. Opera en dos modos:
+- **Modo A:** auditoría de programa completo (malla de 16 asignaturas)
+- **Modo B:** verificación de encaje de una asignatura en la malla
+
+No es un paso obligatorio del diseño de asignatura. No debe tratarse como paso "medio obligatorio" entre competencias y modular. Invocarlo solo cuando se necesita perspectiva macroprogramática.
+
+**`doctoral-content-synthesizer`** — agente satélite de andamiaje intelectual. Activable:
+- tras cerrar la arquitectura modular,
+- tras cerrar la sesión,
+- o antes de impartir una asignatura o módulo.
+
+No diseña estructura curricular. No pertenece al troncal.
+
+### 6.3 Arquitectura de capas
+
+| Capa | Agentes | Función |
+|---|---|---|
+| **A — Inteligencia curricular** | `digital-education-research-analyst` | Producir evidencia, tensiones y nodos accionables |
+| **B — Estructuración curricular** | `doctoral-competency-designer`, `curriculum-modular-architect` | Traducir nodos en competencias y secuencia modular |
+| **C — Operativización pedagógica** | `eval-framework-designer`, `curriculum-session-designer` | Traducir estructura en evaluación y experiencia de enseñanza |
+| **D — Implementación técnica** | `moodle-doctoral-creator` | Traducir el curso a arquitectura LMS viable |
+| **Transversal — Auditoría** | `doctoral-curriculum-architect` | Revisar coherencia macro; no produce interior de cursos |
+| **Satélite — Andamiaje** | `doctoral-content-synthesizer` | Síntesis conceptual y apoyo intelectual al doctorante |
+
+### 6.4 Por qué la evaluación va antes de las sesiones
 
 El Backward Design exige definir las evidencias de aprendizaje esperadas **antes** de diseñar las actividades. Si las sesiones se diseñan antes que la evaluación, existe riesgo de que las actividades no produzcan las evidencias necesarias o que la evaluación se adapte a lo que la sesión hizo en lugar de a lo que el módulo requería. Esta secuencia es innegociable.
 
-### Regla
+### 6.5 Convención oficial de IDs
+
+Esta convención es transversal a todo el pipeline. Ningún agente puede cambiar IDs ya emitidos por uno anterior sin declararlo explícitamente.
+
+| Prefijo | Refiere a | Ejemplo |
+|---|---|---|
+| `NP1–NP5` | Nodos de problematización | NP1, NP3 |
+| `S1, S2…` | Competencias de Saber | S1 |
+| `H1, H2…` | Competencias de Hacer | H2 |
+| `B1, B2…` | Disposiciones de Ser | B1 |
+| `M1–M5` | Módulos de la asignatura | M3 |
+| `RAE1–RAEn` | Resultados de Aprendizaje Evaluables | RAE2 |
+| `E1–E4` | Evidencias calificables | E1 |
+| `R1–R4` | Niveles de rúbrica | R3 |
+| `SES-M1…SES-M5` | Sesiones por módulo | SES-M2 |
+| `LMS-M1…LMS-M5` | Implementación Moodle por módulo | LMS-M4 |
+
+**Regla de corrección:** si un agente necesita corregir una trazabilidad previa, debe declarar qué ID corrige, por qué, y qué artefacto anterior queda afectado. No se permite normalizar silenciosamente.
+
+### 6.6 Rutas del pipeline según encargo
+
+| Encargo | Ruta |
+|---|---|
+| Diseño completo de asignatura nueva | Research → Competencias → Modular → Evaluación → Sesiones → Moodle |
+| Revisión de asignatura existente | Research focalizado → Modular (si débil) → Evaluación → Sesiones → Moodle |
+| Auditoría programática | `doctoral-curriculum-architect` (Modo A) → Research focalizado → Competencias si procede |
+| Implementación LMS de curso ya diseñado | Solo `moodle-doctoral-creator` |
+| Andamiaje intelectual para el doctorante | Solo `doctoral-content-synthesizer` |
+
+### 6.7 Regla
 
 No todos los encargos requieren recorrer todo el pipeline.  
 Usar solo el agente o tramo necesario según el nivel de la solicitud.
 
 Ejemplos:
 
-- Si el usuario pide revisar la malla completa → `doctoral-curriculum-architect`.
+- Si el usuario pide revisar la malla completa → `doctoral-curriculum-architect` (Modo A).
+- Si pide verificar el encaje de una asignatura → `doctoral-curriculum-architect` (Modo B).
 - Si pide el interior de una asignatura específica → `curriculum-modular-architect`.
 - Si pide el marco evaluativo → `eval-framework-designer`.
 - Si pide una sesión concreta → `curriculum-session-designer` (verificar que haya marco evaluativo previo).
