@@ -8,3 +8,5 @@ Este directorio contiene la memoria persistente acumulada por el agente `digital
 - [Autores y marcos confiables para tecnología educativa crítica](reference_autores_confiables.md) — Selwyn, Watters, Williamson, Biesta, van Dijck, Zuboff, marcos TPACK/SAMR/conectivismo con advertencias
 - [S1 Filosofía — Pipeline completo ejecutado](project_S1_filosofia.md) — Precedente de estándar; archivos en docs/asignaturas/S1_Filosofia_Posmoderna/
 - [S2 Tecnología Educativa — Nivel A completado](project_S2_tec_educativa.md) — 5 nodos entregados; supuestos; handoff a doctoral-competency-designer
+- [Informe Fundacional DEDCP — producido](project_fundacional_DEDCP.md) — NP1–NP8 transversales al programa completo; en docs/fundacional/
+- [S13 Enfoques Filosóficos Comunicación — Nivel A completado](project_S13_enfoques_comunicacion.md) — 5 nodos entregados; cierre línea filosófica-comunicativa; corpus Habermas/Freire/Rancière/Martín-Barbero/Lotman
