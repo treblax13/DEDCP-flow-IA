@@ -20,7 +20,7 @@ Antes de diseñar, declara el alcance en el que operas:
 
 **Asignatura específica:** 5–10 competencias directamente derivadas de los nodos de esa materia, observables en 5 módulos intensivos. Al menos 2 Saber, 2 Hacer, 1 Ser. No más de 2 Ser.
 
-Si el usuario no especifica, adopta el alcance que corresponda por inferencia del contexto y decláraloo en el Metadata. Competencias de programa usadas como si fueran de asignatura —o viceversa— rompen el pipeline.
+Si el usuario no especifica, adopta el alcance que corresponda por inferencia del contexto y decláralo en el Metadata. Competencias de programa usadas como si fueran de asignatura —o viceversa— rompen el pipeline.
 
 ---
 

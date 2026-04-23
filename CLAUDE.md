@@ -212,7 +212,7 @@ Ejemplos:
 
 ## 7. Agentes especializados disponibles
 
-Los agentes operativos de Claude Code viven en `.claude/agents/`. Esa es la ubicación canónica. Otros directorios del proyecto (como `agents/` en la raíz o `.antigravity/roles/`) pertenecen a otros sistemas de IA y no deben editarse en su lugar.
+Los agentes operativos de Claude Code viven en `.claude/agents/`. Esa es la única ubicación canónica.
 
 | Agente | Cuándo usarlo |
 |---|---|
@@ -305,8 +305,6 @@ Este bloque es obligatorio en:
 ```text
 DECDP_flow_IA/
 ├── CLAUDE.md                                    ← instrucciones para Claude Code (este archivo)
-├── GEMINI.md                                    ← instrucciones para Gemini (no editar desde Claude)
-├── ANTIGRAVITY.md                               ← instrucciones para Antigravity (no editar desde Claude)
 ├── CONTEXTO/
 │   ├── Malla-Curricular-DECDP.md
 │   ├── docente-posgrado.md
@@ -326,6 +324,7 @@ DECDP_flow_IA/
 │       └── [agente]/                            ← subdirectorio con entradas de memoria
 │           └── MEMORY.md                        ← índice de entradas del agente
 └── docs/
+    ├── fundacional/                             ← documentos transversales al programa completo
     └── asignaturas/                             ← documentos organizados por asignatura
         └── [Semestre_Nombre]/                   ← p. ej. S1_Filosofia_Posmoderna/
             ├── 01_nodos_problematizacion.md
@@ -343,8 +342,8 @@ DECDP_flow_IA/
 
 - Los agentes de Claude Code se editan **solo** en `.claude/agents/`.
 - Las memorias de agente viven en `.claude/agent-memory/[nombre-del-agente]/`.
-- Los documentos producidos se guardan en `docs/asignaturas/[Semestre_Nombre]/` con numeración secuencial según el pipeline.
-- No usar rutas de otros proyectos ni variantes como `claude/agent-memory/` (sin punto) o `agents/` en la raíz.
+- Los documentos de asignatura se guardan en `docs/asignaturas/[Semestre_Nombre]/` con numeración secuencial según el pipeline.
+- Los documentos transversales al programa (no pertenecientes a una asignatura específica) se guardan en `docs/fundacional/`.
 
 ---
 
@@ -530,3 +529,73 @@ Este proyecto no usa IA para producir documentos vistosos sin arquitectura real.
 La IA debe actuar como soporte de diseño académico riguroso, con lógica de sistema, separación clara de niveles y continuidad entre investigación, currículo, evaluación, sesión e implementación.
 
 La calidad del proyecto depende menos del brillo retórico de cada agente y más de la coherencia entre todos.
+
+---
+
+## 20. Principios de ejecución disciplinada
+
+Cuatro principios que rigen el comportamiento operativo de cualquier agente en este proyecto. No describen qué producir (eso está en las secciones 12 y 13), sino cómo actuar antes y durante la producción.
+
+### 20.1 Verificar supuestos antes de diseñar
+
+Antes de producir cualquier artefacto curricular, identificar y declarar los supuestos de operación. No inferir en silencio el alcance, el nivel ni los insumos disponibles.
+
+**Antipatrón:** El usuario pide "diseña el marco evaluativo de la asignatura X" y el agente produce un marco completo asumiendo competencias, módulos y evidencias que no fueron provistos ni verificados.
+
+**Correcto:**
+```
+Antes de diseñar el marco evaluativo, verifico:
+
+1. ¿Existe arquitectura modular (Nivel D) completa? → [sí / no / parcial]
+2. ¿Las competencias del perfil de egreso relevantes están definidas? → [sí / no]
+3. ¿Opero en Submodo A (Doctorado) o Submodo B (Maestría)?
+4. ¿Hay restricciones de carga docente o plataforma que condicionen las evidencias?
+
+Si no hay insumos disponibles, avanzo con supuestos explícitos declarados.
+```
+
+**Regla:** Si el insumo requerido no existe, declararlo. No inventarlo. No normalizar silenciosamente su ausencia.
+
+### 20.2 Producir solo lo que el encargo requiere
+
+No añadir niveles, agentes, secciones ni artefactos que no fueron solicitados. La densidad académica no es virtud cuando excede el encargo.
+
+**Antipatrón:** El usuario pide corregir una evidencia (E2) y el agente reescribe el marco evaluativo completo, añade nuevas rúbricas no solicitadas y propone un rediseño de módulos.
+
+**Correcto:** Corregir únicamente E2. Declarar qué cambió, por qué, y si afecta otras trazabilidades —sin tocarlas a menos que se pida.
+
+**Cuándo añadir complejidad:** Solo cuando el encargo lo requiera explícitamente, o cuando un vacío estructural crítico lo justifique. En ese caso, declararlo como adición fuera del encargo original, no como parte de él.
+
+### 20.3 Intervenir solo sobre lo solicitado
+
+Cuando se pida una corrección o ajuste, operar únicamente sobre el elemento indicado. No "mejorar de paso" elementos adyacentes sin autorización explícita.
+
+**Antipatrón:** El usuario señala que RAE3 no está bien alineado con M3. El agente corrige RAE3, pero también reformula RAE1, cambia los criterios de E1 y añade un resultado de aprendizaje no solicitado.
+
+**Correcto:**
+- Corregir RAE3.
+- Verificar trazabilidad con M3.
+- Declarar si la corrección impacta E1 o E3 —sin modificarlos salvo petición explícita.
+- Proponer ajuste adicional solo si hay rotura estructural evidente, con declaración de por qué es necesario.
+
+**Regla de corrección (refuerza sección 6.5):** Declarar qué ID se corrige, por qué, y qué artefacto anterior queda afectado.
+
+### 20.4 Operar con criterios verificables
+
+No actuar con intenciones vagas. Cada producción debe poder verificarse contra criterios explícitos antes de entregarse.
+
+**Antipatrón:** "Voy a revisar y mejorar la sesión del módulo 2."
+
+**Correcto:**
+```
+Criterios de verificación para esta sesión (SES-M2):
+
+1. Distribución temporal: 1.5 h asíncrona + 4 h síncrona respetadas ✓/✗
+2. Cada actividad produce evidencia trazable al marco evaluativo ✓/✗
+3. El nivel cognitivo escala dentro de la sesión ✓/✗
+4. Las consignas son ejecutables en el tiempo asignado ✓/✗
+5. No se violan reglas de viabilidad (sección 17) ✓/✗
+6. El Backward Design no fue invertido (evaluación define actividad, no al revés) ✓/✗
+```
+
+**Regla:** Verificar contra criterios explícitos, no contra impresiones de calidad. Si no hay criterios definidos para el encargo, declararlos antes de actuar.

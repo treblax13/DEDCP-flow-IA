@@ -10,3 +10,5 @@ Este directorio contiene la memoria persistente acumulada por el agente `digital
 - [S2 Tecnología Educativa — Nivel A completado](project_S2_tec_educativa.md) — 5 nodos entregados; supuestos; handoff a doctoral-competency-designer
 - [Informe Fundacional DEDCP — producido](project_fundacional_DEDCP.md) — NP1–NP8 transversales al programa completo; en docs/fundacional/
 - [S13 Enfoques Filosóficos Comunicación — Nivel A completado](project_S13_enfoques_comunicacion.md) — 5 nodos entregados; cierre línea filosófica-comunicativa; corpus Habermas/Freire/Rancière/Martín-Barbero/Lotman
+- [S3 Cultura Digital Pedagógica — Nivel A completado](project_S3_cultura_digital_pedagogica.md) — 5 nodos entregados; fronteras claras con A7; corpus Han/Martín-Barbero/Walsh/De Certeau/Rockwell/Williamson; handoff a doctoral-competency-designer
+- [A3 Globalización y Sociedad del Conocimiento — Nivel A completado](project_A3_globalizacion_SK.md) — 5 nodos entregados; fronteras A1/A7/A11; corpus Ball/Santos/Mignolo/Laval-Dardot/Williamson; NP5 con articulación explícita a A4

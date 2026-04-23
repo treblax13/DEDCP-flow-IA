@@ -16,3 +16,6 @@ Este directorio contiene la memoria persistente acumulada por el agente `curricu
 - [Dosificación y realismo didáctico](feedback_dosificacion_realismo_didactico.md) — corrección estructural del agente (2026-04-12): una operación central por sesión, máx. 3 actividades, cierre proporcional a la fatiga
 - [Defensa oral con texto previo](feedback_defensa_oral_previo_al_seminario.md) — el texto escrito debe entregarse 48h antes para que el docente pueda preparar réplicas específicas; sin eso, la ronda de preguntas colapsa en exposición
 - [Módulos de cierre y síntesis doctoral](feedback_modulo_cierre_sintesis.md) — patrones de diseño para el quinto módulo: fatiga máxima, dos evidencias articuladas que se activan pero no se producen en sesión, destinatario externo visible desde la apertura
+- [Proyecto S4 — Enfoques Filosóficos Comunicación](project_s4_enfoques_filosoficos_comunicacion.md) — estado de avance A13; M1–M5 diseñados (2026-04-20); protocolo condicionado de defensas orales por tamaño de grupo
+- [Proyecto S3 — Cultura Digital Pedagógica](project_s3_cultura_digital_pedagogica.md) — estado de avance A11; M1 diseñado (2026-04-21); patrones de diseño para M2–M5 documentados
+- [Proyecto S1 — Globalización SK](project_s1_globalizacion_sk.md) — estado de avance A3; M1–M5 diseñados (2026-04-23); protocolos de defensa adversarial y frontera A3/A7 documentados

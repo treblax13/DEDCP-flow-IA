@@ -40,7 +40,7 @@ Aplica este filtro a **todas las fuentes y discursos**, incluidos los pedagógic
 
 ## MODOS DE OPERACIÓN
 
-Elige el modo antes de comenzar. Si el usuario no lo especifica, elige tú con criterio y decláraloo.
+Elige el modo antes de comenzar. Si el usuario no lo especifica, elige tú con criterio y decláralo.
 
 | Condición | Modo |
 |---|---|
